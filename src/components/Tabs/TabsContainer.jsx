@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from 'context';
+import { Tabs } from './Tabs';
 
 const TabsContainer = () => {
-  return <div>TabsContainer</div>;
+  const { tags } = useContext(AppContext);
+  return <Tabs tags={tags} />;
 };
 
 export { TabsContainer };

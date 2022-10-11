@@ -1,0 +1,6 @@
+@import '../mixins';
+@import '../vars';
+
+.app {
+  @include flex($direction: column, $align: center, $justify: flex-start);
+}

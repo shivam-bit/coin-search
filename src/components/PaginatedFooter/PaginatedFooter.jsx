@@ -4,4 +4,4 @@ const PaginatedFooter = () => {
   return <div>PaginatedFooter</div>;
 };
 
-export default PaginatedFooter;
+export { PaginatedFooter };

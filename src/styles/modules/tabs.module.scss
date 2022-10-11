@@ -1,0 +1,30 @@
+@import '../mixins';
+@import '../vars';
+
+.tabs-wrapper {
+  @include flex($align: center, $justify: flex-start);
+  padding: 0.25em;
+  overflow: scroll;
+  max-width: 95%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tabs-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs-wrapper__item {
+  @include flex($align: center, $justify: center);
+  padding: 0.5em 0.75em;
+  background: $primary-400;
+  border-radius: $md-border-radius;
+  box-shadow: 0px 8px 6px rgba(28, 29, 34, 0.16);
+  font-size: $font-normal;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+.tabs-wrapper__item::first-letter {
+  text-transform: uppercase;
+}
