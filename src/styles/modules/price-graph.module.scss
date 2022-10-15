@@ -1,0 +1,14 @@
+@import '../mixins';
+@import '../vars';
+
+.price-graph-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.price-tooltip {
+  color: $color-transparent-green;
+  background: $color-gray-18;
+  padding: 0.25 * $gap;
+  border-radius: $sm-input-radius;
+}
