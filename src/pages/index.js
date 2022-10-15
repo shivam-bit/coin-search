@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className={styles.app}>
       <TabsContainer />
-      <CardsContainer />
       <PaginatedFooterContainer />
+      <CardsContainer />
     </div>
   );
 }

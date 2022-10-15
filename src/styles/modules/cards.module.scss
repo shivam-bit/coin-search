@@ -1,0 +1,26 @@
+@import '../mixins';
+@import '../vars';
+
+.cards-wrapper {
+  @include flex($direction: column, $align: center, $justify: flex-start);
+}
+
+.card {
+  @include flex($direction: column, $align: center, $justify: flex-start);
+  background: $primary-300;
+  border-radius: $sm-input-radius;
+  padding: 1em;
+  width: 30ch;
+}
+
+.card--tile-bar {
+  @include flex($align: center, $justify: space-between, $gap: 1em);
+  font-size: $font-large;
+  font-weight: $font-semi-bold;
+  width: 100%;
+}
+
+.card--body {
+  @include flex($align: center, $justify: space-between, $gap: 1em);
+  width: 100%;
+}

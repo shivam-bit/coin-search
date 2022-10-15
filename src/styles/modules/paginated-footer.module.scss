@@ -1,0 +1,25 @@
+@import '../mixins';
+@import '../vars';
+
+.paginated-footer-wrapper {
+  @include flex($align: center, $justify: center);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.paginated-footer__page {
+  cursor: pointer;
+  padding: 0.5 * $gap;
+  border: 1px solid $color-gray-19;
+  border-radius: $sm-input-radius * 0.5;
+
+  &--active {
+    color: rgba(245, 245, 245, 0.5);
+    border: 1px solid rgba(245, 245, 245, 0.5);
+  }
+}
+
+.disabled-button {
+  color: rgba(245, 245, 245, 0.5);
+}
