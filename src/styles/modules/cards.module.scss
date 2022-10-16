@@ -2,7 +2,9 @@
 @import '../vars';
 
 .cards-wrapper {
-  @include flex($direction: column, $align: center, $justify: flex-start);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $gap;
 }
 
 .card {
@@ -23,4 +25,10 @@
 .card--body {
   @include flex($align: center, $justify: space-between, $gap: 1em);
   width: 100%;
+}
+
+@media (max-width: 720px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
