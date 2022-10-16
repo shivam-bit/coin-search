@@ -44,12 +44,6 @@ class CoinSDK {
       return err;
     }
   }
-  moreNftsAvailable() {
-    return Boolean(this.cursor);
-  }
-  resetCursor() {
-    this.cursor = '';
-  }
 }
 
 export default new CoinSDK();
