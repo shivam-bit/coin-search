@@ -1,11 +1,12 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { ITEMS_PER_PAGE } from 'config/constants';
+import CoinSDK from 'services/coin';
 
 export const AppContext = createContext({});
 
 export const AppContextProvider = ({ children }) => {
-  const [appLoading, setAppLoading] = useState(true);
+  const [appLoading, setAppLoading] = useState(false);
   const [coins, setCoins] = useState([]);
   const [tags, setTags] = useState([]);
   const [activeTags, setActiveTags] = useState([]);
@@ -28,16 +29,7 @@ export const AppContextProvider = ({ children }) => {
   }, [coins]);
 
   useEffect(() => {
-    const fetchCoinsPromise = axios.get(
-      'https://supermind-staging.vercel.app/api/test/listing'
-    );
-    fetchCoinsPromise
-      .then((response) => {
-        if (response.status == 200) {
-          return response.data;
-        }
-        throw new Error('Not able to fetch coins');
-      })
+    CoinSDK.fetchAllCoins()
       .then((data) => {
         const extractedTags = [];
         data.forEach(({ tags }) =>
