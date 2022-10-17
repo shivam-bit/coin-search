@@ -6,6 +6,8 @@ html {
 }
 body {
   min-height: 100%;
+  color: #fff;
+  background: $primary-100;
 }
 
 html,
@@ -23,14 +25,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: #fff;
-    background: $primary-100;
-  }
 }
