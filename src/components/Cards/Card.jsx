@@ -5,7 +5,8 @@ import { Copy, FileSuccess } from '@icon-park/react';
 import { useCopyToClipboard } from 'hooks';
 const Card = (props) => {
   const [isCopied, handleCopy] = useCopyToClipboard(4000);
-  const constructCopyObject = () => {
+  const constructCopyObject = (e) => {
+    e.stopPropagation();
     const coinObject = props.coin;
     const data = `
     ------ COIN INFO --------
