@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from 'styles/modules/cards.module.scss';
 import { Copy, FileSuccess } from '@icon-park/react';
 import { useCopyToClipboard } from 'hooks';
@@ -16,24 +17,26 @@ const Card = (props) => {
     handleCopy(data);
   };
   return (
-    <div className={styles['card']}>
-      <div className={styles['card--tile-bar']}>
-        <span>{props.coin.name}</span>
-        {isCopied ? (
-          <FileSuccess theme="outline" size="24" fill="#20ca48" />
-        ) : (
-          <span onClick={constructCopyObject}>
-            <Copy theme="outline" size="24" fill="#fff" />
+    <Link href={`/${props.coin.id}`}>
+      <div className={styles['card']}>
+        <div className={styles['card--tile-bar']}>
+          <span>{props.coin.name}</span>
+          {isCopied ? (
+            <FileSuccess theme="outline" size="24" fill="#20ca48" />
+          ) : (
+            <span onClick={constructCopyObject}>
+              <Copy theme="outline" size="24" fill="#fff" />
+            </span>
+          )}
+        </div>
+        <div className={styles['card--body']}>
+          <span>{props.coin.fullName}</span>
+          <span className={styles['card--body__price']}>
+            $ {props.coin.price ? props.coin.price.toFixed(6) : 'Unavailable'}
           </span>
-        )}
+        </div>
       </div>
-      <div className={styles['card--body']}>
-        <span>{props.coin.fullName}</span>
-        <span className={styles['card--body__price']}>
-          $ {props.coin.price ? props.coin.price.toFixed(6) : 'Unavailable'}
-        </span>
-      </div>
-    </div>
+    </Link>
   );
 };
 
