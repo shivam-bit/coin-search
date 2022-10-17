@@ -27,6 +27,10 @@
   width: 100%;
 }
 
+.card--body__price {
+  color: $color-transparent-green;
+}
+
 @media (max-width: 720px) {
   .cards-wrapper {
     grid-template-columns: 1fr;

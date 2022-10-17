@@ -29,8 +29,8 @@ const Card = (props) => {
       </div>
       <div className={styles['card--body']}>
         <span>{props.coin.fullName}</span>
-        <span>
-          {props.coin.price ? props.coin.price.toFixed(6) : 'Unavailable'}
+        <span className={styles['card--body__price']}>
+          $ {props.coin.price ? props.coin.price.toFixed(6) : 'Unavailable'}
         </span>
       </div>
     </div>
